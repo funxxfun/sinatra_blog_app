@@ -13,9 +13,9 @@
       <td class="col"><a href="post/<%= post.id %>"><%= post.title %></a></td>
       <td class="col"><%= post.body %></td>
       <td class="col"><%= post.user_id %></td>
-      <td class="col"><%#= post.user.name %></td>
-      <td class="col"><%= post.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
-      <td class="col"><%= post.updated_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+      <td class="col"><%= post.user %></td>
+      <td class="col"><%= post.created_at.strftime('%Y/%m/%d') %></td>
+      <td class="col"><%= post.updated_at.strftime('%Y/%m/%d') %></td>
    </tr>
   <% end %>
 </table>

@@ -1,0 +1,19 @@
+<h2>ToDo：<%= @task.task_name %></h2>
+<p>状態：<%= @task.status %></p>
+<p>期日：<%= @task.deadline %></p>
+<form method="get" action="/destroy/task/<%= @task.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">削除する</button>
+</form>
+
+<h2>ToDo編集</h2>
+<form method="post" action="/task/<%= @task.id %>">
+  <input type="hidden" name="_method" value="patch">
+  <label for="task_name">ToDo：</label>
+  <input type="text" name="task_name" value="<%= @task.task_name %>">
+  <label for="status">状態：</label>
+  <input type="text" name="status" value="<%= @task.status %>">
+  <label for="deadline">期日：</label>
+  <input type="date" name="deadline" value="<%= @task.deadline %>">
+  <button type="submit">変更する</button>
+</form>
