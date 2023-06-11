@@ -13,3 +13,6 @@ class User < ActiveRecord::Base
   # end
   
 end
+
+class Task < ActiveRecord::Base
+end

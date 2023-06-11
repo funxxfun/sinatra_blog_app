@@ -1,0 +1,36 @@
+<h2>ToDo一覧</h2>
+<table>
+  <tr>
+    <th>Todo</th>
+    <th>状態</th>
+    <th>期日</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.task_name %></a></td>
+      <td><%= task.status %></td>
+      <td><%= task.deadline %></td>
+      <td><a href="/task/<%= task.id %>">編集</a></td>
+      <td>
+        <form method="post" action="/task/<%= task.id %>">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">削除する</button>
+        </form>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<h2>新規投稿</h2>
+<form method="post" action="/task">
+  <label for="task_name">ToDo</label>
+  <input type="text" name="task_name">
+  <label for="status">状態</label>
+  <input type="text" name="status">
+  <label for="deadline">期日</label>
+  <input type="date" name="deadline">
+  <button type="submit">投稿する</button>
+</form>
+

@@ -111,3 +111,40 @@ end
 #   erb :user_new
 # end
 
+
+get '/task' do
+  @tasks = Task.all
+  erb :task
+end
+
+post '/task' do
+  @task = Task.new(
+    task_name: params[:task_name],
+    status: params[:status],
+    deadline: params[:deadline]
+  )
+  @task.save
+  redirect '/task'
+end
+
+get '/task/:id' do
+  @task = Task.find(params[:id])
+  erb :task_show
+end
+
+patch '/task/:id' do
+  @task = Task.find(params[:id])
+  @task.update(
+    task_name: params[:task_name],
+    status: params[:status],
+    deadline: params[:deadline]
+  )
+  @task.save
+  redirect '/task'
+end
+
+delete '/task/:id' do
+  @task = Task.find(params[:id])
+  @task.destroy
+  redirect '/task'
+end
