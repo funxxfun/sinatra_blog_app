@@ -37,18 +37,18 @@ get '/post/:id' do
 end
 
 patch '/post/:id' do
-  @post = Post.find(params[:id])
-  @post.update(
+  post = Post.find(params[:id])
+  post.update(
     title: params[:title],
     body: params[:body]
   )
-  @post.save
-  redirect "/post/#{@post.id}"
+  post.save
+  redirect "/post/#{post.id}"
 end
 
 delete '/post/:id' do
-  @post = Post.find(params[:id])
-  @post.destroy
+  post = Post.find(params[:id])
+  post.destroy
   redirect '/'
 end
 
@@ -133,18 +133,18 @@ get '/task/:id' do
 end
 
 patch '/task/:id' do
-  @task = Task.find(params[:id])
-  @task.update(
+  task = Task.find(params[:id])
+  task.update(
     task_name: params[:task_name],
     status: params[:status],
     deadline: params[:deadline]
   )
-  @task.save
+  task.save
   redirect '/task'
 end
 
 delete '/task/:id' do
-  @task = Task.find(params[:id])
-  @task.destroy
+  task = Task.find(params[:id])
+  task.destroy
   redirect '/task'
 end
