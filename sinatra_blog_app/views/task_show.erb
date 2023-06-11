@@ -1,7 +1,7 @@
 <h2>ToDo：<%= @task.task_name %></h2>
 <p>状態：<%= @task.status %></p>
 <p>期日：<%= @task.deadline %></p>
-<form method="post" action="/task/<%= @task.id %>">
+<form method="get" action="/destroy/task/<%= @task.id %>">
   <input type="hidden" name="_method" value="delete">
   <button type="submit">削除する</button>
 </form>

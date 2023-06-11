@@ -14,10 +14,11 @@
       <td><%= task.deadline %></td>
       <td><a href="/task/<%= task.id %>">編集</a></td>
       <td>
-        <form method="post" action="/task/<%= task.id %>">
-          <input type="hidden" name="_method" value="delete">
-          <button type="submit">削除する</button>
-        </form>
+        <%# <form method="post" action="/task/= task.id"> %>
+          <%# <input type="hidden" name="_method" value="delete"> %>
+          <%# <button type="submit">削除する</button> %>
+        <%# </form> %>
+        <a href="/destroy/task/<%= task.id %>">削除</a>
       </td>
     </tr>
   <% end %>

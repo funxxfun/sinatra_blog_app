@@ -143,7 +143,14 @@ patch '/task/:id' do
   redirect '/task'
 end
 
-delete '/task/:id' do
+# delete '/task/:id' do
+#   task = Task.find(params[:id])
+#   task.destroy
+#   redirect '/task'
+# end
+
+
+get '/destroy/task/:id' do
   task = Task.find(params[:id])
   task.destroy
   redirect '/task'
