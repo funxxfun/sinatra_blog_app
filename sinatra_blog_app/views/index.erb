@@ -1,21 +1,24 @@
 <h2>投稿一覧</h2>
 <table>
-  <tr class="row">
-    <th class="col">タイトル</th>
-    <th class="col">投稿内容</th>
-    <th class="col">投稿者id</th>
-    <th class="col">投稿者</th>
-    <th class="col">投稿日時</th>
-    <th class="col">更新日時</th>
+  <tr>
+    <th>タイトル</th>
+    <th>投稿内容</th>
+    <th>投稿者id</th>
+    <th>投稿者</th>
+    <th>投稿日時</th>
+    <th>更新日時</th>
+    <th></th>
   </tr>
   <% @posts.each do |post| %>
-    <tr class="row">
-      <td class="col"><a href="post/<%= post.id %>"><%= post.title %></a></td>
-      <td class="col"><%= post.body %></td>
-      <td class="col"><%= post.user_id %></td>
-      <td class="col"><%= post.user.name %></td>
-      <td class="col"><%= post.created_at.strftime('%Y/%m/%d') %></td>
-      <td class="col"><%= post.updated_at.strftime('%Y/%m/%d') %></td>
+    <tr>
+      <td><a href="post/<%= post.id %>"><%= post.title %></a></td>
+      <td><%= post.body %></td>
+      <td><%= post.user_id %></td>
+      <td><%= post.user.name %></td>
+      <td><%= post.created_at.strftime('%Y/%m/%d') %></td>
+      <td><%= post.updated_at.strftime('%Y/%m/%d') %></td>
+      <td><a href="/like">❤️</a></td>
+      <td><span><%= @like.to_i %></span></td>
    </tr>
   <% end %>
 </table>

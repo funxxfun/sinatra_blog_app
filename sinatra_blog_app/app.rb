@@ -155,3 +155,18 @@ get '/destroy/task/:id' do
   task.destroy
   redirect '/task'
 end
+
+get '/like' do
+  @like = Like.new
+  erb :index
+end
+
+post '/like' do
+  if like.nil?
+    like = 1
+  else
+    like = like + 1
+  end
+  erb :index
+end
+
