@@ -154,7 +154,8 @@ end
 
 get '/like' do
   @like = Like.new
-  erb :index
+  @like.save
+  redirect '/'
 end
 
 # post '/like' do
