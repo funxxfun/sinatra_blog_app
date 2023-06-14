@@ -17,8 +17,8 @@
       <td><%= post.user.name %></td>
       <td><%= post.created_at.strftime('%Y/%m/%d') %></td>
       <td><%= post.updated_at.strftime('%Y/%m/%d') %></td>
-      <td><button>❤️</button></td>
-      <td><span><%= @like %></span></td>
+      <td><a href="/like">❤️</a></td>
+      <td><span><%= @like.to_i %></span></td>
    </tr>
   <% end %>
 </table>
