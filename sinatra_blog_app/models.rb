@@ -16,3 +16,6 @@ end
 
 class Task < ActiveRecord::Base
 end
+
+class Like < ActiveRecord::Base
+end
