@@ -1,11 +1,11 @@
-<%# if @user.errors.present? %>
-  <%# エラーがあります %>
-  <%# <ul> %>
-    <%# @user.errors.full_messages.each do |message| %>
-      <%# <li>= message</li> %>
-    <%# end %>
-  <%# </ul> %>
-<%# end %>
+<% if @user.errors.present? %>
+  エラーがあります
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message%></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <h1>アカウント新規登録</h1>
 <form action="/signup" method="post">
