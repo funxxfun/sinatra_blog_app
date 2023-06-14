@@ -50,6 +50,8 @@ end
 
 
 get '/signup' do
+  # からの@userを作って@userがNillになるのを防ぐ
+  @user = User.new
   erb :signup
 end
 
