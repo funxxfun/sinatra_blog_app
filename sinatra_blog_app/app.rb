@@ -9,10 +9,6 @@ set :database, {adapter: 'sqlite3', database: 'myblogdb.sqlite3'}
 
 get '/' do
   @posts = Post.all
-  # 投稿したユーザーの名前を表示する記述
-  # postのidを取る記述を書き換える
-  # @post = Post.find(1)
-  # @user = User.find(@post.user_id)
   erb :index
 end
 
@@ -161,12 +157,12 @@ get '/like' do
   erb :index
 end
 
-post '/like' do
-  if like.nil?
-    like = 1
-  else
-    like = like + 1
-  end
-  erb :index
-end
+# post '/like' do
+#   if like.nil?
+#     like = 1
+#   else
+#     like = like + 1
+#   end
+#   erb :index
+# end
 
