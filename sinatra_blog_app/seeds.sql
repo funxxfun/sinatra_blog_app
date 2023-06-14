@@ -29,3 +29,8 @@ insert into posts (user_id, title, body, created_at, updated_at) values ('1', '�
 insert into posts (user_id, title, body, created_at, updated_at) values ('2', 'タイトル3', '投稿3', '2023.06.01', '2024.06.01');
 insert into posts (user_id, title, body, created_at, updated_at) values ('2', 'タイトル4', '投稿4', '2023.06.01', '2024.06.01');
 
+
+
+insert into likes (user_id, post_id) values ('1', '3');
+insert into likes (user_id, post_id) values ('2', '1');
+insert into likes (user_id, post_id) values ('2', '2');
