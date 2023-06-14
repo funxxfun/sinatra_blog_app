@@ -9,6 +9,7 @@ set :database, {adapter: 'sqlite3', database: 'myblogdb.sqlite3'}
 
 get '/' do
   @posts = Post.all
+  @post = Post.new
   erb :index
 end
 
@@ -19,8 +20,15 @@ post '/post' do
       body: params[:body],
       user_id: session[:user_id]
     )
-    @post.save
-    redirect '/'
+
+    if @post.save
+      redirect '/'
+    else
+      # からの＠postsを作成して@postsがNillになるのを防ぐ
+      @posts = Post.all
+      erb :index
+    end
+
   else
     erb :login
   end
