@@ -18,6 +18,11 @@ class User < ActiveRecord::Base
 end
 
 class Task < ActiveRecord::Base
+  # enum status: {
+  #   todo:1,
+  #   active:2,
+  #   done:3
+  # }
 end
 
 class Like < ActiveRecord::Base
