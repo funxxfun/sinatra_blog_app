@@ -119,7 +119,7 @@ end
 
 
 get '/task' do
-  @tasks = Task.all
+  @tasks = Task.order('deadline').all
   erb :task
 end
 
