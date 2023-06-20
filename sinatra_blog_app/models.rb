@@ -10,19 +10,9 @@ class User < ActiveRecord::Base
   validates_length_of :password, :maxmum => 10, :minimum => 4
   has_many :posts
   has_many :likes
-
-  # def authenticate(user_id, password)
-  #   return self.id == user_id ? true : false
-  # end
-  
 end
 
 class Task < ActiveRecord::Base
-  # enum status: {
-  #   todo:1,
-  #   active:2,
-  #   done:3
-  # }
 end
 
 class Like < ActiveRecord::Base
