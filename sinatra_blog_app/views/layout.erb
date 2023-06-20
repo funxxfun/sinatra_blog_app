@@ -14,7 +14,7 @@
 
 				<% if session[:user_id] %>
 					<div>
-						<p>ようこそ、<%#= @user.name %>さん</p>
+						<p>ようこそ、<%= session[:user_id] %>さん</p>
 					</div>
 					<li><a class="btn btn-warning" href=<%= "/user/#{session[:user_id]}" %>>マイページ</a></li>
 					<li>

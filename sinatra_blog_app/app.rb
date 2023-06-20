@@ -106,9 +106,9 @@ end
 get '/user/:id' do
   @user = User.find(params[:id])
   # if @user && @user.authenticate(session[:user_id])
-    erb :user_show
-  # elseú
-    # redirect '/login'
+  erb :user_show
+  # else
+  # redirect '/login'
   # end
 end
 
@@ -119,6 +119,7 @@ end
 
 
 get '/task' do
+  redirect '/login' unless session[:user_id]
   @tasks = Task.order('deadline').all
   erb :task
 end

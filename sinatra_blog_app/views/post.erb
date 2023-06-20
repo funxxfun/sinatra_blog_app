@@ -2,18 +2,20 @@
 <p>作成日: <%= @post.created_at.strftime('%Y/%m/%d') %></p>
 <p>投稿内容：<%= @post.body %></p>
 <p>投稿者：<%= @post.user.name %></p>
-<form method="post" action="/post/<%= @post.id %>">
-  <input type="hidden" name="_method" value="delete">
-  <button type="submit">削除する</button>
-</form>
 
+<% if session[:user_id] == @user.id %>
+  <form method="post" action="/post/<%= @post.id %>">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">削除する</button>
+  </form>
 
-<h2>投稿編集</h2>
-<form method="post" action="/post/<%= @post.id %>">
-  <input type="hidden" name="_method" value="patch">
-  <label for="title">タイトル：</label>
-  <input type="text" name="title" value="<%= @post.title %>">
-  <label for="body">投稿内容：</label>
-  <input type="text" name="body" value="<%= @post.body %>">
-  <button type="submit">変更する</button>
-</form>
+  <h2>投稿編集</h2>
+  <form method="post" action="/post/<%= @post.id %>">
+    <input type="hidden" name="_method" value="patch">
+    <label for="title">タイトル：</label>
+    <input type="text" name="title" value="<%= @post.title %>">
+    <label for="body">投稿内容：</label>
+    <input type="text" name="body" value="<%= @post.body %>">
+    <button type="submit">変更する</button>
+  </form>
+<% end %>
