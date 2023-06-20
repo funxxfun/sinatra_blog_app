@@ -168,3 +168,6 @@ end
 #   erb :index
 # end
 
+get '/category' do
+  
+end
